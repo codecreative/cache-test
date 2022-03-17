@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./bots/"$GITHUB_WORKFLOW"/node_modules          
-          key: ${{ format('node-modules-{0}', hashFiles(format('./bots/{0}/package-lock.json', GITHUB_WORKFLOW))) }}
+          key: ${{ format('node-modules-{0}', hashFiles(format('./bots/{0}/package-lock.json', $GITHUB_WORKFLOW))) }}
           
       - name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
