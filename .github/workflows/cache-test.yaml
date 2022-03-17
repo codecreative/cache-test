@@ -28,6 +28,4 @@ jobs:
         run: (cd ./bots/"$GITHUB_WORKFLOW" && npm install)
 
       - name: Process data
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        run: (cd ./bots/"$GITHUB_WORKFLOW" && node index.js) # <-- change "make all" to your bot-running command
+        run: (cd ./bots/"$GITHUB_WORKFLOW" && node index.js) 
